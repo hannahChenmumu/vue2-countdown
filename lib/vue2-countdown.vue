@@ -98,6 +98,10 @@
     },
     methods: {
       gogogo: function () {
+        // 当多次调用子组件时，需要清除计时器
+        if(this.INTERVAL){
+          clearTimeout(this.INTERVAL)
+        }
         //判断是秒还是毫秒
         this.startTime.toString().length == 10 ? this.star = this.startTime * 1000 : this.star = this.startTime;
         this.endTime.toString().length == 10 ? this.end = this.endTime * 1000 : this.end = this.endTime;
